@@ -16,7 +16,7 @@ function setup() {
 }
 
 function touchStarted() {
-  ellipse(mouseX, mouseY, 20, 20);
+  text(`x:${mouseX} y:${mouseY}`,mouseX, mouseY);
   // prevent default
   return false;
 }
