@@ -16,12 +16,13 @@ function setup() {
 }
 
 function touchStarted() {
-  text(`x:${mouseX} y:${mouseY}`,mouseX, mouseY);
+ 
   // prevent default
   return false;
 }
 function touchMoved() {
   rect(mouseX, mouseY, 5, 5);
+  text(`x:${mouseX} y:${mouseY}`,mouseX, mouseY);
   // prevent default
   return false;
 }
