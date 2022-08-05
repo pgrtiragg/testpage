@@ -9,9 +9,8 @@ function setup() {
     function draw() {
 
 
-  let display = touches.length + ' touches';
-  textSize(100)
-  text(display, 100, windowHeight/2);
+  textSize(10)
+
 
 }
 
@@ -21,8 +20,8 @@ function touchStarted() {
   return false;
 }
 function touchMoved() {
-  rect(mouseX, mouseY, 5, 5);
-  text(`x:${mouseX} y:${mouseY}`,mouseX, mouseY);
+
+  text(`x:${mouseX} y:${mouseY}`,10 ,10);
   // prevent default
   return false;
 }
