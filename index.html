@@ -6,19 +6,18 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
-
     function draw() {
   clear();
 
   let display = touches.length + ' touches';
   textSize(100)
-  text(display, 100, 100);
+  text(display, windowWidth/4, windowHeight/2);
 
 }
 
 function touchStarted() {
-  fill('red');
-  ellipse(mouseX, mouseY, 20, 10);
+  ellipse(mouseX, mouseY, 20, 20);
+  // prevent default
   return false;
 }
 
