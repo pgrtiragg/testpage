@@ -16,16 +16,9 @@ function setup() {
 
 }
 
-
-function touchMoved() {
-  alert('touchmoved')
-  // prevent default
+function touchStarted() {
+  ellipse(mouseX, mouseY, 20, 10);
   return false;
 }
 
-function touchEnded() {
-  alert('touchended')
-  // prevent default
-  return false;
-}
 </script>
