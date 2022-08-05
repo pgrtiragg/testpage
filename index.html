@@ -13,12 +13,22 @@ function setup() {
   let display = touches.length + ' touches';
   textSize(100)
   text(display, 100, 100);
-  describe(`Number of touches currently registered are displayed
-    on the canvas`);
+
 }
 
 function touchStarted() {
 alert('touchstarted')
+  return false;
+}
+function touchMoved() {
+  alert('touchmoved')
+  // prevent default
+  return false;
+}
+
+function touchEnded() {
+  alert('touchended')
+  // prevent default
   return false;
 }
 </script>
