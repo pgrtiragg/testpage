@@ -7,7 +7,7 @@ function setup() {
 }
 
     function draw() {
-  clear();
+
 
   let display = touches.length + ' touches';
   textSize(100)
@@ -20,5 +20,9 @@ function touchStarted() {
   // prevent default
   return false;
 }
-
+function touchMoved() {
+  rect(mouseX, mouseY, 5, 5);
+  // prevent default
+  return false;
+}
 </script>
