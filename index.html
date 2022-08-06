@@ -1,33 +1,53 @@
 <script defer src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
 
+<style>
+  @keyframes ball{
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.line{
+  animation:line 1s linear infinite alternate;
+}
+
+@keyframes line{
+  100%{
+    /*transform:translateY(4000%)*/
+    top:98%;
+  }
+}
+
+
+</style>
+<div class='line absolute h-2 w-full bg-black z-10 top-0'></div>
+
+
 <script>
+const container=document.getElementById("contenedor");
+bgcolors=['from-yellow-300,to-green-600','from-blue-300,to-pink-300'];
+const line=document.getElementById('line')
+for(i=1;i<5;i++){
+  //`bg-${color}-${n}00`
+  randcolor= Math.round(Math.random());
+  selectedcolor=bgcolors[randcolor].split(',')
+  div=document.createElement("div")
+  innerdiv=document.createElement("div")
+  div.classList.add("h-5","rounded-full" , "border-2", "border-black","bg-gradient-to-b",`${selectedcolor[0]}`,`${selectedcolor[1]}`,"to-green-600",'w-5','flex','justify-center','items-center','absolute','scale-0','opacity-0');
+  innerdiv.classList.add('w-3','h-3','rounded-full','bg-black')
+  div.appendChild(innerdiv)
+  div.style.animation='ball 2s  infinite '
+  div.style.animationDelay=(Math.random()*3).toFixed(2)+"s";
+  div.style.left=Math.random()*90+"%"
+  div.style.bottom=Math.random()*90+"%"
+  //div.innerHTML=i
+  div.addEventListener('click',function(){
+    this.remove()
+  })
+  container.append(div);
+  
 
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-}
-
-    function draw() {
-
-
-  textSize(10)
-
-
-}
-
-function touchStarted() {
- 
-  // prevent default
-  return false;
-}
-/*function touchMoved() {
-clear()
-  text(`x:${mouseX} y:${mouseY}`,10 ,10);
-  // prevent default
-  return false;
-}*/
-
-function touchStarted(event) {
-  textSize(100)
-  text(50,50,event);
+  
 }
 </script>
